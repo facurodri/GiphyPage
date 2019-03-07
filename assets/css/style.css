@@ -1,0 +1,60 @@
+p {
+    font-family: cursive;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+.gifDiv {
+    float:left;
+}
+.btn-success {
+    text-shadow: black;
+}
+.btn-primary {
+    margin-bottom: 10px;
+}
+body {
+    background: url(../images/allcharacters.jpg);
+    background-position: center;
+    background-size: auto;
+    position: relative;
+    background-attachment: fixed;
+}
+h1{
+    color: white;
+    font-family: unset;
+}
+h2{
+    font-size: xx-large;
+    color: white;
+    text-shadow: 2px 2px 2px blue;
+    font-family: cursive;
+}
+.jumbotron {
+    background-color: black;
+    background-clip: content-box;
+    color: deepskyblue;
+}
+
+.btnLabel {
+    color: white;
+    text-shadow: 3px 3px 3px rgba(3, 12, 138, 0.753);
+    font-size: 2.5em;
+    padding-left: 10px;
+}
+
+#athlete-form{
+    padding: 5px;
+    border: 2px solid white;
+    background-color: black;
+    float:left;
+} 
+#typedName {
+    padding-top: 8px;
+    margin-bottom: 5px;
+}
+
+.btn-filter {
+    margin: 10px 5px;
+    border: solid 2px white;
+}
