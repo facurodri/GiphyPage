@@ -4,9 +4,9 @@ p {
     color: white;
     text-shadow: 2px 2px 2px black;
 }
-.gifDiv {
+/* .giphy {
     float:left;
-}
+} */
 .btn-success {
     text-shadow: black;
 }
@@ -27,7 +27,7 @@ h1{
 h2{
     font-size: xx-large;
     color: white;
-    text-shadow: 2px 2px 2px blue;
+    text-shadow: 2px 2px 2px black;
     font-family: cursive;
 }
 .jumbotron {
@@ -38,12 +38,12 @@ h2{
 
 .btnLabel {
     color: white;
-    text-shadow: 3px 3px 3px rgba(3, 12, 138, 0.753);
+    text-align: center;
     font-size: 2.5em;
     padding-left: 10px;
 }
 
-#athlete-form{
+#cartoon-form{
     padding: 5px;
     border: 2px solid white;
     background-color: black;
@@ -57,4 +57,7 @@ h2{
 .btn-filter {
     margin: 10px 5px;
     border: solid 2px white;
+}
+.resultsBox {
+    margin-left: 45px;
 }

@@ -1,18 +1,4 @@
-// get API from gyphy and put it in variable
-// create an array to hold search buttons
-// create a function to create button and set proper values to it
-// append buttons to proper space
 
-// Before you can make any part of our site work, you need to create an array of strings, each one related to a topic that interests you. Save it to a variable called topics.
-// We chose animals for our theme, but you can make a list to your own liking.
-// Your app should take the topics in this array and create buttons in your HTML.
-// Try using a loop that appends a button for each string in the array.
-// When the user clicks on a button, the page should grab 10 static, non-animated gif images from the GIPHY API and place them on the page.
-// When the user clicks one of the still GIPHY images, the gif should animate. If the user clicks the gif again, it should stop playing.
-// Under every gif, display its rating (PG, G, so on).
-// This data is provided by the GIPHY API.
-// Only once you get images displaying with button presses should you move on to the next step.
-// Add a form to your page takes the value from a user input box and adds it into your topics array. Then make a function call that takes each topic in the array remakes the buttons on the page.
 
 var searchesArr = ["Fairly Odd Parents", "Bugs Bunny", "Naruto", "Super Friends", "Rocket Power", "Goku","Thor","Power Rangers","Toothless","Cat-Dog","Sponge Bob","X-Men"];
 var newBtns = [];
@@ -29,15 +15,19 @@ function createBtnForSetArr() {
         $("#setArray").append(" ");
     }
 }
-// creates a gif button for new searched item
+// creates a gif button for new typed name inquired from input
 function addBtn() {
     $("#buttonsSpace").empty();
     for (var i = 0; i < newBtns.length; i++) {
+        //creates a button each round
         var a = $("<button>");
+        //give class to buttons
         a.addClass("btn btn-success");
         a.addClass("btn-filter")
+        //adds attibute to button
         a.attr("data-name", newBtns[i]);
         a.text(newBtns[i]);
+        //apends each button
         $("#buttonsSpace").append(a);
         $("#buttonsSpace").append(" ");
     }
@@ -61,26 +51,32 @@ function displayNameInfo() {
         var results = response.data;
         //loop to create gifs
         for (var i = 0; i < results.length; i++) {
+           //create div for holding GIF data response 
             var gifDiv = $("<div>");
+            // data rating
             var rating = results[i].rating;
-            var p = $("<p>").text("Rating: " + rating);
+            //writes rating to DOM
+            var r = $("<p>").text("Rating: " + rating);
+            //craetes image tag for GIF data response
             var gifImage = $("<img>");
+            //gives class to gif tag
             gifImage.addClass("rounded");
             gifImage.addClass("giphy");
+            // add's attibutes to gifs
             gifImage.attr("src", results[i].images.fixed_height_still.url);
             gifImage.attr("data-still", results[i].images.fixed_height_still.url);
             gifImage.attr("data-animate", results[i].images.fixed_height.url);
             gifImage.attr("data-state", "still");
-
+            // adds/appends gif image and rating together
             gifDiv.append(gifImage);
-            gifDiv.append(p);
-
+            gifDiv.append(r);
+            //displays Gif to page in results spot
             $("#resultsSpot").prepend(gifDiv);
 
         }
 
         console.log(response);
-
+        //function to check if gif is clicked
         $(".giphy").on("click", function () {
             var state = $(this).attr("data-state");
             if (state === "still") {
@@ -95,18 +91,18 @@ function displayNameInfo() {
 
     });
 }
-
+//sets DOM to be ready on go
 $(document).ready(function () {
     createBtnForSetArr();
     $(document).on("click", ".btn-filter", displayNameInfo);
-
+    //Listener for adding cartoon gif from DOM
     $("#addCartoon").on("click", function (event) {
+        //prevents page from reloading on its own
         event.preventDefault();
-
+        //creates a variable for typed name in submit button
         var name = $("#typedName").val().trim();
         newBtns.push(name);
         addBtn();
-
     })
 })
 

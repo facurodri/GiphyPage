@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,11 +38,12 @@
         </div>
     </div> 
     
-    <div class= "container form">
+    <div class= "container-fluid form">
         <div class="row">
-            <div class ="col-lg-12 col-md-8 col-sm-4">
-    <form id="athlete-form">
-        <label for="typedName" class= "btnLabel">Make Your Own Cartoons GIF button Here!</label>
+            <div class ="col-lg-1"></div>
+            <div class ="col-lg-10 col-md-8 col-sm-4 resultsBox">
+    <form id="cartoon-form">
+        <label for="typedName" class= "btnLabel">Create Your Own Cartoons GIF Here!</label>
         <input id="typedName" type="text"></input>  
         <!--button to add new athlete button--> 
         <input id="addCartoon" type="submit" class="btn btn-primary" value="Add Cartoon Gif">
@@ -53,9 +53,9 @@
 </div>
     <!--place where gifs will be added-->
     <div class= "container py-3">
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class ="col-md-8 col-sm-4">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class =" col-md-8 col-sm-4 ">
             <div id="resultsSpot"></div> 
         </div>
         <div class="col-md-2"></div>
