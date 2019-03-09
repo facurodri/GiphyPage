@@ -41,8 +41,8 @@ function displayNameInfo() {
     //creates variable to hold attribute 
     var name = $(this).attr("data-name");
     //variable to hold API key and search name
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=jGgY1cTVHzVEnPojQe6k9tywEwdrcQoZ&limit=10&rating=pg";
-
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=jGgY1cTVHzVEnPojQe6k9tywEwdrcQoZ&limit=10&rating=pg";
+    
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -86,9 +86,7 @@ function displayNameInfo() {
                 $(this).attr("src", $(this).attr("data-still"));
                 $(this).attr("data-state", "still");
             }
-
         });
-
     });
 }
 //sets DOM to be ready on go
